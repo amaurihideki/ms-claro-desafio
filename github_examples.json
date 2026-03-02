@@ -1,0 +1,24 @@
+{
+  "issues": [
+    {
+      "number": 1,
+      "title": "Adicionar multiplayer local",
+      "labels": ["enhancement"]
+    },
+    {
+      "number": 2,
+      "title": "Salvar histórico de pontuações em arquivo JSON",
+      "labels": ["enhancement"]
+    },
+    {
+      "number": 3,
+      "title": "Corrigir bug no cronômetro que não reseta em reinícios rápidos",
+      "labels": ["bug"]
+    }
+  ],
+  "labels": [
+    { "name": "enhancement", "color": "ffcc00" },
+    { "name": "bug", "color": "ff0000" },
+    { "name": "documentation", "color": "0055cc" }
+  ]
+}

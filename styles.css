@@ -1,8 +1,8 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  /* gradient background for a more attractive but simple look */
-  background: linear-gradient(135deg, #e0ffe0 0%, #e0f0ff 100%);
+  /* cyan gradient background for a calm, simple look */
+  background: linear-gradient(135deg, #e0ffff 0%, #e0f7ff 100%);
 }
 
 .board {
@@ -27,9 +27,9 @@ body {
   border: 1px solid #333;
   border-radius: 3px;
 }
-.swatch.brown { background-color: brown; }
-.swatch.green { background-color: green; }
-.swatch.red { background-color: red; }
+.swatch.cyan1 { background-color: #00bcd4; }
+.swatch.cyan2 { background-color: #00acc1; }
+.swatch.cyan3 { background-color: #00838f; }
 
 /* leaderboard styling */
 #leaderboard {
@@ -57,12 +57,28 @@ body {
 .mole {
   width: 100px;
   height: 100px;
-  background-color: brown;
+  background-color: #00bcd4;
   border-radius: 50%;
   position: absolute;
   top: 10px;
   left: 10px;
   display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+
+.mole .face {
+  font-size: 2rem;
+  line-height: 1;
+  user-select: none;
+}
+
+.mole.hit {
+  transform: scale(0.9) translateY(6px);
+  opacity: 0.9;
 }
 
 #score-board, #timer {

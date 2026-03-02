@@ -21,6 +21,11 @@ function createBoard() {
     hole.classList.add('hole');
     const mole = document.createElement('div');
     mole.classList.add('mole');
+    // add a simple face inside the mole
+    const face = document.createElement('div');
+    face.classList.add('face');
+    face.textContent = '🙂';
+    mole.appendChild(face);
     hole.appendChild(mole);
     hole.addEventListener('click', () => hitMole(mole));
     board.appendChild(hole);
@@ -39,6 +44,9 @@ function showMole() {
   const type = moleTypes[Math.floor(Math.random() * moleTypes.length)];
   mole.style.backgroundColor = type.color;
   mole.dataset.points = type.points;
+  // reset face when appearing
+  const faceEl = mole.querySelector('.face');
+  if (faceEl) faceEl.textContent = '🙂';
   mole.style.display = 'block';
   moleTimeout = setTimeout(() => {
     mole.style.display = 'none';
@@ -72,8 +80,16 @@ function hitMole(mole) {
     const pts = parseInt(mole.dataset.points || '1', 10);
     score += pts;
     scoreEl.textContent = score;
-    mole.style.display = 'none';
+    // change face to represent reaction
+    const faceEl = mole.querySelector('.face');
+    if (faceEl) faceEl.textContent = 'xD';
+    mole.classList.add('hit');
     clearTimeout(moleTimeout);
+    // keep the hit face visible shortly before hiding
+    setTimeout(() => {
+      mole.style.display = 'none';
+      mole.classList.remove('hit');
+    }, 200);
   }
 }
 
