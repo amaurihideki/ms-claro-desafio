@@ -1,0 +1,71 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  /* gradient background for a more attractive but simple look */
+  background: linear-gradient(135deg, #e0ffe0 0%, #e0f0ff 100%);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* legend swatches for color scoring */
+#legend {
+  margin: 10px 0;
+  font-size: 0.9em;
+}
+.swatch {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin: 0 4px;
+  vertical-align: middle;
+  border: 1px solid #333;
+  border-radius: 3px;
+}
+.swatch.brown { background-color: brown; }
+.swatch.green { background-color: green; }
+.swatch.red { background-color: red; }
+
+/* leaderboard styling */
+#leaderboard {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(255,255,255,0.8);
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 200px;
+  text-align: left;
+}
+#leaderboard h2 { margin: 0 0 5px; font-size: 1em; }
+#leaderboard ol { padding-left: 20px; margin: 0; font-size: 0.9em; }
+
+.hole {
+  width: 120px;
+  height: 120px;
+  background-color: #888;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.mole {
+  width: 100px;
+  height: 100px;
+  background-color: brown;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: none;
+}
+
+#score-board, #timer {
+  font-size: 1.2em;
+  margin: 10px;
+}
